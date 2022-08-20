@@ -12,6 +12,7 @@ let pause = false;
 let totalSeconds = 0;
 let totalSecondsBackup = 0;
 
+// FUNCTION TO DISPLAY ONLY ONE BUTTON AND CHANGE TO MULTI ONCE CLICKED
 init();
 
 function init() {
@@ -19,7 +20,7 @@ function init() {
     btnStop.style.display = 'none';
     btnReset.style.display = 'none';
 
-
+// BUTTON FUNCTIONS 
     btnStart.addEventListener('click', () => {
         const hours = parseInt(hoursEl.value);
         const minutes = parseInt(minutesEl.value);
@@ -64,7 +65,7 @@ function init() {
         updateInputs();
     })
 }
-
+// START FUNCTION TO START THE COUNTDOWN
 function startTimer() {
     interval = setInterval(() => {
 
@@ -77,6 +78,7 @@ function startTimer() {
         }
     }, 1000)
 }
+// STOP FUNCTION TO STOP THE COUNTDOWN
 
 function stopTimer() {
     interval = clearInterval(interval);

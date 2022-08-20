@@ -2,7 +2,8 @@
 
 let [milliseconds,second,minute,] = [0,0,0];
 let timerRef = document.querySelector('.mainTime');
-let int = null;
+let int = null; // SETTING THE TIME TO NULL
+
 document.getElementById('start').addEventListener('click', ()=>{if(int!==null){
 clearInterval(int);
 }
@@ -15,6 +16,9 @@ document.getElementById('reset').addEventListener('click', ()=>{clearInterval(in
 [milliseconds,seconds,minutes,hours] = [0,0,0];
 timerRef.innerHTML = '00 : 00 : 00';
 });
+
+// MAIN FUNCTION TO START THE STOPWATCH
+
 function mainTime(){
 milliseconds+=10;
 if(milliseconds == 1000){
@@ -28,6 +32,9 @@ minute = 0;
 }
 }
 }
+
+// FINAL DOM MODIFIERS WITH SECONDS MILLISECONDS AND MINUTES
+
 let m = minute < 10 ? "0" + minute : minute;
 let s = second < 10 ? "0" + second : second;
 let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
